@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.CommentsMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.Comments" >
+    <id column="comment_id" property="commentId" jdbcType="BIGINT" />
+    <result column="pro_no" property="proNo" jdbcType="BIGINT" />
+    <result column="comment_author" property="commentAuthor" jdbcType="VARCHAR" />
+    <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
+    <result column="comment_time" property="commentTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    comment_id, pro_no, comment_author, comment_content, comment_time, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from comments
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from comments
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.Comments" >
+    insert into comments (comment_id, pro_no, comment_author, 
+      comment_content, comment_time, create_time, 
+      update_time)
+    values (#{commentId,jdbcType=BIGINT}, #{proNo,jdbcType=BIGINT}, #{commentAuthor,jdbcType=VARCHAR}, 
+      #{commentContent,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.Comments" >
+    insert into comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        comment_id,
+      </if>
+      <if test="proNo != null" >
+        pro_no,
+      </if>
+      <if test="commentAuthor != null" >
+        comment_author,
+      </if>
+      <if test="commentContent != null" >
+        comment_content,
+      </if>
+      <if test="commentTime != null" >
+        comment_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        #{commentId,jdbcType=BIGINT},
+      </if>
+      <if test="proNo != null" >
+        #{proNo,jdbcType=BIGINT},
+      </if>
+      <if test="commentAuthor != null" >
+        #{commentAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="commentContent != null" >
+        #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.Comments" >
+    update comments
+    <set >
+      <if test="proNo != null" >
+        pro_no = #{proNo,jdbcType=BIGINT},
+      </if>
+      <if test="commentAuthor != null" >
+        comment_author = #{commentAuthor,jdbcType=VARCHAR},
+      </if>
+      <if test="commentContent != null" >
+        comment_content = #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.Comments" >
+    update comments
+    set pro_no = #{proNo,jdbcType=BIGINT},
+      comment_author = #{commentAuthor,jdbcType=VARCHAR},
+      comment_content = #{commentContent,jdbcType=VARCHAR},
+      comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </update>
+   <select id="selectCommentsByNewId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select *
+    from comments
+    where  pro_no = #{proNo,jdbcType=BIGINT}
+  </select>
+  
+</mapper>

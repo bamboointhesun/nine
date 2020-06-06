@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.AssociationJobMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.AssociationJob" >
+    <id column="job_id" property="jobId" jdbcType="BIGINT" />
+    <result column="job_title" property="jobTitle" jdbcType="VARCHAR" />
+    <result column="job_desc" property="jobDesc" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    job_id, job_title, job_desc, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from association_job
+    where job_id = #{jobId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from association_job
+    where job_id = #{jobId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.AssociationJob" >
+    insert into association_job (job_id, job_title, job_desc, 
+      create_time, update_time)
+    values (#{jobId,jdbcType=BIGINT}, #{jobTitle,jdbcType=VARCHAR}, #{jobDesc,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.AssociationJob" >
+    insert into association_job
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jobId != null" >
+        job_id,
+      </if>
+      <if test="jobTitle != null" >
+        job_title,
+      </if>
+      <if test="jobDesc != null" >
+        job_desc,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jobId != null" >
+        #{jobId,jdbcType=BIGINT},
+      </if>
+      <if test="jobTitle != null" >
+        #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null" >
+        #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.AssociationJob" >
+    update association_job
+    <set >
+      <if test="jobTitle != null" >
+        job_title = #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null" >
+        job_desc = #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where job_id = #{jobId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.AssociationJob" >
+    update association_job
+    set job_title = #{jobTitle,jdbcType=VARCHAR},
+      job_desc = #{jobDesc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where job_id = #{jobId,jdbcType=BIGINT}
+  </update>
+  <!-- 自定义 -->
+	<select id="selectAllJobs" resultMap="BaseResultMap">
+		select *
+		from association_job
+	</select>
+</mapper>

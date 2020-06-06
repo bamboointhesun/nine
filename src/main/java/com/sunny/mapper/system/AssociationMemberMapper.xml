@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.AssociationMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.AssociationMember" >
+    <id column="member_id" property="memberId" jdbcType="BIGINT" />
+    <result column="job_title" property="jobTitle" jdbcType="VARCHAR" />
+    <result column="member_name" property="memberName" jdbcType="VARCHAR" />
+    <result column="member_phone" property="memberPhone" jdbcType="VARCHAR" />
+    <result column="member_gender" property="memberGender" jdbcType="VARCHAR" />
+    <result column="member_birthday" property="memberBirthday" jdbcType="DATE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    member_id, job_title, member_name, member_phone, member_gender, member_birthday, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from association_member
+    where member_id = #{memberId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from association_member
+    where member_id = #{memberId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.AssociationMember" >
+    insert into association_member (member_id, job_title, member_name, 
+      member_phone, member_gender, member_birthday, 
+      create_time, update_time)
+    values (#{memberId,jdbcType=BIGINT}, #{jobTitle,jdbcType=VARCHAR}, #{memberName,jdbcType=VARCHAR}, 
+      #{memberPhone,jdbcType=VARCHAR}, #{memberGender,jdbcType=VARCHAR}, #{memberBirthday,jdbcType=DATE}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.AssociationMember" >
+    insert into association_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="jobTitle != null" >
+        job_title,
+      </if>
+      <if test="memberName != null" >
+        member_name,
+      </if>
+      <if test="memberPhone != null" >
+        member_phone,
+      </if>
+      <if test="memberGender != null" >
+        member_gender,
+      </if>
+      <if test="memberBirthday != null" >
+        member_birthday,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="memberId != null" >
+        #{memberId,jdbcType=BIGINT},
+      </if>
+      <if test="jobTitle != null" >
+        #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null" >
+        #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null" >
+        #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="memberGender != null" >
+        #{memberGender,jdbcType=VARCHAR},
+      </if>
+      <if test="memberBirthday != null" >
+        #{memberBirthday,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.AssociationMember" >
+    update association_member
+    <set >
+      <if test="jobTitle != null" >
+        job_title = #{jobTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null" >
+        member_name = #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null" >
+        member_phone = #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="memberGender != null" >
+        member_gender = #{memberGender,jdbcType=VARCHAR},
+      </if>
+      <if test="memberBirthday != null" >
+        member_birthday = #{memberBirthday,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where member_id = #{memberId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.AssociationMember" >
+    update association_member
+    set job_title = #{jobTitle,jdbcType=VARCHAR},
+      member_name = #{memberName,jdbcType=VARCHAR},
+      member_phone = #{memberPhone,jdbcType=VARCHAR},
+      member_gender = #{memberGender,jdbcType=VARCHAR},
+      member_birthday = #{memberBirthday,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where member_id = #{memberId,jdbcType=BIGINT}
+  </update>
+ 	<!-- 自定义 -->
+	<select id="selectAllMembers" resultMap="BaseResultMap">
+		select *
+		from association_member
+	</select>
+	<select id="selectAObject" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select *
+		from association_member
+		where member_phone = #{memberPhone,jdbcType=VARCHAR}
+	</select>
+  
+</mapper>

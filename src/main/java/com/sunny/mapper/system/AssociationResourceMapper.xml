@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.AssociationResourceMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.AssociationResource" >
+    <id column="resource_id" property="resourceId" jdbcType="BIGINT" />
+    <result column="resource_title" property="resourceTitle" jdbcType="VARCHAR" />
+    <result column="resource_desc" property="resourceDesc" jdbcType="VARCHAR" />
+    <result column="resource_state" property="resourceState" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    resource_id, resource_title, resource_desc, resource_state, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from association_resource
+    where resource_id = #{resourceId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from association_resource
+    where resource_id = #{resourceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.AssociationResource" >
+    insert into association_resource (resource_id, resource_title, resource_desc, 
+      resource_state, create_time, update_time
+      )
+    values (#{resourceId,jdbcType=BIGINT}, #{resourceTitle,jdbcType=VARCHAR}, #{resourceDesc,jdbcType=VARCHAR}, 
+      #{resourceState,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.AssociationResource" >
+    insert into association_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resourceId != null" >
+        resource_id,
+      </if>
+      <if test="resourceTitle != null" >
+        resource_title,
+      </if>
+      <if test="resourceDesc != null" >
+        resource_desc,
+      </if>
+      <if test="resourceState != null" >
+        resource_state,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resourceId != null" >
+        #{resourceId,jdbcType=BIGINT},
+      </if>
+      <if test="resourceTitle != null" >
+        #{resourceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceDesc != null" >
+        #{resourceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceState != null" >
+        #{resourceState,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.AssociationResource" >
+    update association_resource
+    <set >
+      <if test="resourceTitle != null" >
+        resource_title = #{resourceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceDesc != null" >
+        resource_desc = #{resourceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceState != null" >
+        resource_state = #{resourceState,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where resource_id = #{resourceId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.AssociationResource" >
+    update association_resource
+    set resource_title = #{resourceTitle,jdbcType=VARCHAR},
+      resource_desc = #{resourceDesc,jdbcType=VARCHAR},
+      resource_state = #{resourceState,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where resource_id = #{resourceId,jdbcType=BIGINT}
+  </update>
+  
+     <!-- 自定义 -->
+	<select id="selectAllResources" resultMap="BaseResultMap">
+		select *
+		from association_resource
+	</select>
+</mapper>

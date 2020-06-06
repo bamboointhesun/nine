@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.AssociationProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.AssociationProject" >
+    <id column="project_id" property="projectId" jdbcType="BIGINT" />
+    <result column="project_title" property="projectTitle" jdbcType="VARCHAR" />
+    <result column="project_topic" property="projectTopic" jdbcType="VARCHAR" />
+    <result column="project_place" property="projectPlace" jdbcType="VARCHAR" />
+    <result column="project_wheel" property="projectWheel" jdbcType="VARCHAR" />
+    <result column="sponsor_title" property="sponsorTitle" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="DATE" />
+    <result column="end_time" property="endTime" jdbcType="DATE" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    project_id, project_title, project_topic, project_place, project_wheel, sponsor_title, 
+    start_time, end_time, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from association_project
+    where project_id = #{projectId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from association_project
+    where project_id = #{projectId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.AssociationProject" >
+    insert into association_project (project_id, project_title, project_topic, 
+      project_place, project_wheel, sponsor_title, 
+      start_time, end_time, create_time, 
+      update_time)
+    values (#{projectId,jdbcType=BIGINT}, #{projectTitle,jdbcType=VARCHAR}, #{projectTopic,jdbcType=VARCHAR}, 
+      #{projectPlace,jdbcType=VARCHAR}, #{projectWheel,jdbcType=VARCHAR}, #{sponsorTitle,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=DATE}, #{endTime,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.AssociationProject" >
+    insert into association_project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="projectId != null" >
+        project_id,
+      </if>
+      <if test="projectTitle != null" >
+        project_title,
+      </if>
+      <if test="projectTopic != null" >
+        project_topic,
+      </if>
+      <if test="projectPlace != null" >
+        project_place,
+      </if>
+      <if test="projectWheel != null" >
+        project_wheel,
+      </if>
+      <if test="sponsorTitle != null" >
+        sponsor_title,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="projectId != null" >
+        #{projectId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTitle != null" >
+        #{projectTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="projectTopic != null" >
+        #{projectTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="projectPlace != null" >
+        #{projectPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="projectWheel != null" >
+        #{projectWheel,jdbcType=VARCHAR},
+      </if>
+      <if test="sponsorTitle != null" >
+        #{sponsorTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.AssociationProject" >
+    update association_project
+    <set >
+      <if test="projectTitle != null" >
+        project_title = #{projectTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="projectTopic != null" >
+        project_topic = #{projectTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="projectPlace != null" >
+        project_place = #{projectPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="projectWheel != null" >
+        project_wheel = #{projectWheel,jdbcType=VARCHAR},
+      </if>
+      <if test="sponsorTitle != null" >
+        sponsor_title = #{sponsorTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=DATE},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where project_id = #{projectId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.AssociationProject" >
+    update association_project
+    set project_title = #{projectTitle,jdbcType=VARCHAR},
+      project_topic = #{projectTopic,jdbcType=VARCHAR},
+      project_place = #{projectPlace,jdbcType=VARCHAR},
+      project_wheel = #{projectWheel,jdbcType=VARCHAR},
+      sponsor_title = #{sponsorTitle,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=DATE},
+      end_time = #{endTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where project_id = #{projectId,jdbcType=BIGINT}
+  </update>
+   <!-- 自定义 -->
+	<select id="selectAllProjects" resultMap="BaseResultMap">
+		select *
+		from association_project
+	</select>
+</mapper>

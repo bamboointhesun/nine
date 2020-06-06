@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.ApplyActivityMapper">
+	<resultMap id="BaseResultMap"
+		type="com.sunny.model.system.ApplyActivity">
+		<id column="app_id" property="appId" jdbcType="BIGINT" />
+		<result column="app_activity" property="appActivity"
+			jdbcType="VARCHAR" />
+		<result column="app_name" property="appName" jdbcType="VARCHAR" />
+		<result column="app_gender" property="appGender"
+			jdbcType="VARCHAR" />
+		<result column="app_major" property="appMajor"
+			jdbcType="VARCHAR" />
+		<result column="app_grade" property="appGrade"
+			jdbcType="VARCHAR" />
+		<result column="app_phone" property="appPhone"
+			jdbcType="VARCHAR" />
+		<result column="app_qq" property="appQq" jdbcType="VARCHAR" />
+		<result column="app_tar" property="appTar" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime"
+			jdbcType="TIMESTAMP" />
+		<result column="update_time" property="updateTime"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		app_id, app_activity, app_name, app_gender, app_major, app_grade, app_phone,
+		app_qq,
+		app_tar, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from apply_activity
+		where app_id = #{appId,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from apply_activity
+		where app_id = #{appId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert"
+		parameterType="com.sunny.model.system.ApplyActivity">
+		insert into apply_activity (app_id, app_activity, app_name,
+		app_gender, app_major, app_grade,
+		app_phone, app_qq, app_tar,
+		create_time, update_time)
+		values (#{appId,jdbcType=BIGINT}, #{appActivity,jdbcType=VARCHAR},
+		#{appName,jdbcType=VARCHAR},
+		#{appGender,jdbcType=VARCHAR}, #{appMajor,jdbcType=VARCHAR}, #{appGrade,jdbcType=VARCHAR},
+		#{appPhone,jdbcType=VARCHAR}, #{appQq,jdbcType=VARCHAR},
+		#{appTar,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.sunny.model.system.ApplyActivity">
+		insert into apply_activity
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="appId != null">
+				app_id,
+			</if>
+			<if test="appActivity != null">
+				app_activity,
+			</if>
+			<if test="appName != null">
+				app_name,
+			</if>
+			<if test="appGender != null">
+				app_gender,
+			</if>
+			<if test="appMajor != null">
+				app_major,
+			</if>
+			<if test="appGrade != null">
+				app_grade,
+			</if>
+			<if test="appPhone != null">
+				app_phone,
+			</if>
+			<if test="appQq != null">
+				app_qq,
+			</if>
+			<if test="appTar != null">
+				app_tar,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="appId != null">
+				#{appId,jdbcType=BIGINT},
+			</if>
+			<if test="appActivity != null">
+				#{appActivity,jdbcType=VARCHAR},
+			</if>
+			<if test="appName != null">
+				#{appName,jdbcType=VARCHAR},
+			</if>
+			<if test="appGender != null">
+				#{appGender,jdbcType=VARCHAR},
+			</if>
+			<if test="appMajor != null">
+				#{appMajor,jdbcType=VARCHAR},
+			</if>
+			<if test="appGrade != null">
+				#{appGrade,jdbcType=VARCHAR},
+			</if>
+			<if test="appPhone != null">
+				#{appPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="appQq != null">
+				#{appQq,jdbcType=VARCHAR},
+			</if>
+			<if test="appTar != null">
+				#{appTar,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.sunny.model.system.ApplyActivity">
+		update apply_activity
+		<set>
+			<if test="appActivity != null">
+				app_activity = #{appActivity,jdbcType=VARCHAR},
+			</if>
+			<if test="appName != null">
+				app_name = #{appName,jdbcType=VARCHAR},
+			</if>
+			<if test="appGender != null">
+				app_gender = #{appGender,jdbcType=VARCHAR},
+			</if>
+			<if test="appMajor != null">
+				app_major = #{appMajor,jdbcType=VARCHAR},
+			</if>
+			<if test="appGrade != null">
+				app_grade = #{appGrade,jdbcType=VARCHAR},
+			</if>
+			<if test="appPhone != null">
+				app_phone = #{appPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="appQq != null">
+				app_qq = #{appQq,jdbcType=VARCHAR},
+			</if>
+			<if test="appTar != null">
+				app_tar = #{appTar,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where app_id = #{appId,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.sunny.model.system.ApplyActivity">
+		update apply_activity
+		set app_activity = #{appActivity,jdbcType=VARCHAR},
+		app_name = #{appName,jdbcType=VARCHAR},
+		app_gender = #{appGender,jdbcType=VARCHAR},
+		app_major = #{appMajor,jdbcType=VARCHAR},
+		app_grade = #{appGrade,jdbcType=VARCHAR},
+		app_phone = #{appPhone,jdbcType=VARCHAR},
+		app_qq = #{appQq,jdbcType=VARCHAR},
+		app_tar = #{appTar,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where app_id = #{appId,jdbcType=BIGINT}
+	</update>
+	<!-- 自定义 -->
+	<select id="selectAllApplys" resultMap="BaseResultMap">
+		select *
+		from
+		apply_activity
+	</select>
+
+	<select id="selectByActivityName" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select *
+		from apply_activity
+		where app_activity = #{appActivity,jdbcType=VARCHAR}
+	</select>
+</mapper>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.AssociationSocialMapper" >
+  <resultMap id="BaseResultMap" type="com.sunny.model.system.AssociationSocial" >
+    <id column="social_id" property="socialId" jdbcType="BIGINT" />
+    <result column="social_login" property="socialLogin" jdbcType="VARCHAR" />
+    <result column="social_password" property="socialPassword" jdbcType="VARCHAR" />
+    <result column="social_desc" property="socialDesc" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    social_id, social_login, social_password, social_desc, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from association_social
+    where social_id = #{socialId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from association_social
+    where social_id = #{socialId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.sunny.model.system.AssociationSocial" >
+    insert into association_social (social_id, social_login, social_password, 
+      social_desc, create_time, update_time
+      )
+    values (#{socialId,jdbcType=BIGINT}, #{socialLogin,jdbcType=VARCHAR}, #{socialPassword,jdbcType=VARCHAR}, 
+      #{socialDesc,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunny.model.system.AssociationSocial" >
+    insert into association_social
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="socialId != null" >
+        social_id,
+      </if>
+      <if test="socialLogin != null" >
+        social_login,
+      </if>
+      <if test="socialPassword != null" >
+        social_password,
+      </if>
+      <if test="socialDesc != null" >
+        social_desc,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="socialId != null" >
+        #{socialId,jdbcType=BIGINT},
+      </if>
+      <if test="socialLogin != null" >
+        #{socialLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="socialPassword != null" >
+        #{socialPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="socialDesc != null" >
+        #{socialDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunny.model.system.AssociationSocial" >
+    update association_social
+    <set >
+      <if test="socialLogin != null" >
+        social_login = #{socialLogin,jdbcType=VARCHAR},
+      </if>
+      <if test="socialPassword != null" >
+        social_password = #{socialPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="socialDesc != null" >
+        social_desc = #{socialDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where social_id = #{socialId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunny.model.system.AssociationSocial" >
+    update association_social
+    set social_login = #{socialLogin,jdbcType=VARCHAR},
+      social_password = #{socialPassword,jdbcType=VARCHAR},
+      social_desc = #{socialDesc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where social_id = #{socialId,jdbcType=BIGINT}
+  </update>
+  
+    <!-- 自定义 -->
+	<select id="selectAllSocials" resultMap="BaseResultMap">
+		select *
+		from association_social
+	</select>
+</mapper>

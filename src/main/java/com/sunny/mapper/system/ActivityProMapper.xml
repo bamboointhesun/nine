@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunny.dao.system.ActivityProMapper">
+	<resultMap id="BaseResultMap"
+		type="com.sunny.model.system.ActivityPro">
+		<id column="pro_id" property="proId" jdbcType="BIGINT" />
+		<result column="pro_title" property="proTitle"
+			jdbcType="VARCHAR" />
+		<result column="pro_author" property="proAuthor"
+			jdbcType="VARCHAR" />
+		<result column="pro_date" property="proDate" jdbcType="DATE" />
+		<result column="pro_content" property="proContent"
+			jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime"
+			jdbcType="TIMESTAMP" />
+		<result column="update_time" property="updateTime"
+			jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		pro_id, pro_title, pro_author, pro_date, pro_content, create_time,
+		update_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from activity_pro
+		where pro_id = #{proId,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from activity_pro
+		where pro_id = #{proId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert"
+		parameterType="com.sunny.model.system.ActivityPro">
+		insert into activity_pro (pro_id, pro_title, pro_author,
+		pro_date, pro_content, create_time,
+		update_time)
+		values (#{proId,jdbcType=BIGINT}, #{proTitle,jdbcType=VARCHAR},
+		#{proAuthor,jdbcType=VARCHAR},
+		#{proDate,jdbcType=DATE}, #{proContent,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.sunny.model.system.ActivityPro">
+		insert into activity_pro
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="proId != null">
+				pro_id,
+			</if>
+			<if test="proTitle != null">
+				pro_title,
+			</if>
+			<if test="proAuthor != null">
+				pro_author,
+			</if>
+			<if test="proDate != null">
+				pro_date,
+			</if>
+			<if test="proContent != null">
+				pro_content,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="proId != null">
+				#{proId,jdbcType=BIGINT},
+			</if>
+			<if test="proTitle != null">
+				#{proTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="proAuthor != null">
+				#{proAuthor,jdbcType=VARCHAR},
+			</if>
+			<if test="proDate != null">
+				#{proDate,jdbcType=DATE},
+			</if>
+			<if test="proContent != null">
+				#{proContent,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.sunny.model.system.ActivityPro">
+		update activity_pro
+		<set>
+			<if test="proTitle != null">
+				pro_title = #{proTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="proAuthor != null">
+				pro_author = #{proAuthor,jdbcType=VARCHAR},
+			</if>
+			<if test="proDate != null">
+				pro_date = #{proDate,jdbcType=DATE},
+			</if>
+			<if test="proContent != null">
+				pro_content = #{proContent,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where pro_id = #{proId,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.sunny.model.system.ActivityPro">
+		update activity_pro
+		set pro_title = #{proTitle,jdbcType=VARCHAR},
+		pro_author = #{proAuthor,jdbcType=VARCHAR},
+		pro_date = #{proDate,jdbcType=DATE},
+		pro_content = #{proContent,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where pro_id = #{proId,jdbcType=BIGINT}
+	</update>
+	<!-- 自定义 -->
+	<select id="selectAllPros" resultMap="BaseResultMap">
+		select *
+		from activity_pro
+	</select>
+
+</mapper>

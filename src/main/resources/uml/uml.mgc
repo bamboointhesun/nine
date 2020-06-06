@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="com.sunny.utils.BaseService" x="1991" y="986">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.ApplyActivityMapper"
+            endpointName="applyActivityMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationProjectMapper"
+            endpointName="associationProjectMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.CommentsMapper"
+            endpointName="commentsMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.WebUserMapper"
+            endpointName="webUserMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationSocialMapper"
+            endpointName="associationSocialMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationResourceMapper"
+            endpointName="associationResourceMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationMemberMapper"
+            endpointName="associationMemberMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationJobMapper"
+            endpointName="associationJobMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.AssociationExternalMapper"
+            endpointName="associationExternalMapperImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.dao.system.ActivityProMapper"
+            endpointName="activityProMapperImpl" kind="Simple"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationResourceMapper"
+        x="1569" y="456">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationProjectMapper" x="967" y="438">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.ActivityProService" x="1002" y="1610">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.userdo.CommentsService" x="2624" y="1066">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationMemberMapper" x="1589" y="216">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.sunny.service.ass.impl.AssociationMemberServiceImpl"
+        x="2962" y="198">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationMemberService"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationMemberMapper"/>
+    </Class>
+    <Class name="com.sunny.service.userdo.ApplyActivityService" x="2470" y="1384">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.ApplyListController" x="67" y="322">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.ApplyListService"
+            endpointName="applyListServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.ApplyListService"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationJob" x="4199" y="972">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.sunny.service.ass.impl.AssociationResourceServiceImpl"
+        x="3609" y="1378">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationResourceService"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationResourceMapper"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationExternal" x="4459" y="578">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.system.WebUserService" x="1446" y="1974">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.model.system.ActivityPro" x="3923" y="582">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.model.system.WebUser" x="5069" y="576">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.dao.system.CommentsMapper" x="1635" y="34">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationSocial" x="3905" y="968">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.ActivityProController"
+        x="1802" y="1898">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.ActivityProService"
+            endpointName="activityProServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationProjectService"
+            endpointName="associationProjectServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.ActivityProService"/>
+        <Communication destinationClassName="com.sunny.model.system.ActivityPro"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationProjectService"/>
+    </Class>
+    <Class
+        name="com.sunny.service.ass.impl.AssociationExternalServiceImpl"
+        x="3050" y="1055">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationExternalService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationExternalMapper"/>
+    </Class>
+    <Class name="com.sunny.service.userdo.impl.CommentsServiceImpl"
+        x="2116" y="453">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.userdo.CommentsService"/>
+        <Communication destinationClassName="com.sunny.dao.system.CommentsMapper"/>
+    </Class>
+    <Class name="com.sunny.service.ass.impl.AssociationJobServiceImpl"
+        x="3001" y="1523">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationJobService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationJobMapper"/>
+    </Class>
+    <Class
+        name="com.sunny.service.ass.impl.AssociationProjectServiceImpl"
+        x="3555" y="635">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationProjectService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationProjectMapper"/>
+    </Class>
+    <Class
+        name="com.sunny.service.ass.impl.AssociationSocialServiceImpl"
+        x="3526" y="1804">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.service.ass.AssociationSocialService"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Communication destinationClassName="com.sunny.dao.system.AssociationSocialMapper"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationMemberController"
+        x="70" y="890">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationJobService"
+            endpointName="associationJobServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationMemberService"
+            endpointName="associationMemberServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationMemberService"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationMember"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationJobService"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationResource" x="4707" y="910">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationExternalController"
+        x="67" y="479">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationExternalService"
+            endpointName="associationExternalServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationExternalService"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationExternal"/>
+    </Class>
+    <Class name="com.sunny.controller.system.WebUSerController" x="68" y="1764">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationMemberService"
+            endpointName="associationMemberServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.system.WebUserService"
+            endpointName="webUserServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationMemberService"/>
+        <Communication destinationClassName="com.sunny.service.system.WebUserService"/>
+        <Communication destinationClassName="com.sunny.model.system.WebUser"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationMember" x="4975" y="878">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.utils.BaseTime" x="2197" y="1207">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.impl.ActivityProServiceImpl"
+        x="2022" y="2216">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.ass.ActivityProService"/>
+        <Communication destinationClassName="com.sunny.dao.system.ActivityProMapper"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationMemberService"
+        x="2633" y="141">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationResourceController"
+        x="68" y="1378">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationResourceService"
+            endpointName="associationResourceServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationResourceService"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationResource"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationExternalService"
+        x="2845" y="2190">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationJobController"
+        x="71" y="685">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationJobService"
+            endpointName="associationJobServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationJob"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationJobService"/>
+    </Class>
+    <Class name="com.sunny.dao.system.ActivityProMapper" x="1001" y="28">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.model.system.Comments" x="4761" y="572">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.model.system.AssociationProject" x="4491" y="932">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationProjectService"
+        x="3626" y="442">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationJobMapper" x="1289" y="238">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationResourceService"
+        x="3472" y="2136">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationSocialService"
+        x="3504" y="2332">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.dao.system.ApplyActivityMapper" x="1263" y="32">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.userdo.ReadNewsController"
+        x="1098" y="2214">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.userdo.CommentsService"
+            endpointName="commentsServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.ActivityProService"
+            endpointName="activityProServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.ActivityProService"/>
+        <Communication destinationClassName="com.sunny.service.userdo.CommentsService"/>
+        <Communication destinationClassName="com.sunny.model.system.Comments"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationProjectController"
+        x="68" y="1132">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationProjectService"
+            endpointName="associationProjectServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationExternalService"
+            endpointName="associationExternalServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationExternalService"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationProject"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationProjectService"/>
+    </Class>
+    <Class name="com.sunny.controller.ass.AssociationSocialController"
+        x="72" y="1582">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.AssociationSocialService"
+            endpointName="associationSocialServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.AssociationSocialService"/>
+        <Communication destinationClassName="com.sunny.model.system.AssociationSocial"/>
+    </Class>
+    <Class name="com.sunny.service.ass.ApplyListService" x="2902" y="2023">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.system.impl.WebUserServiceImpl"
+        x="926" y="2053">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.system.WebUserService"/>
+        <Communication destinationClassName="com.sunny.model.system.WebUser"/>
+        <Communication destinationClassName="com.sunny.dao.system.WebUserMapper"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationExternalMapper" x="991" y="204">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.userdo.impl.ApplyActivityServiceImpl"
+        x="2400" y="527">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.userdo.ApplyActivityService"/>
+        <Communication destinationClassName="com.sunny.dao.system.ApplyActivityMapper"/>
+    </Class>
+    <Class name="com.sunny.model.system.ApplyActivity" x="4191" y="584">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.AssociationJobService" x="2825" y="2360">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.visitor.seeNewsController" x="208" y="2297">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.sunny.service.userdo.CommentsService"
+            endpointName="commentsServiceImpl" kind="Simple"/>
+        <Association
+            destinationClassName="com.sunny.service.ass.ActivityProService"
+            endpointName="activityProServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.ass.ActivityProService"/>
+        <Communication destinationClassName="com.sunny.service.userdo.CommentsService"/>
+    </Class>
+    <Class name="com.sunny.dao.system.AssociationSocialMapper" x="975" y="600">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.controller.userdo.ApplyActivityController"
+        x="66" y="2132">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseTime"/>
+        <Association
+            destinationClassName="com.sunny.service.userdo.ApplyActivityService"
+            endpointName="ApplyActivityServiceImpl" kind="Simple"/>
+        <Communication destinationClassName="com.sunny.service.userdo.ApplyActivityService"/>
+        <Communication destinationClassName="com.sunny.model.system.ApplyActivity"/>
+    </Class>
+    <Class name="com.sunny.dao.system.WebUserMapper" x="1297" y="450">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.sunny.service.ass.impl.ApplyListServiceImpl"
+        x="2650" y="462">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.sunny.utils.BaseService"/>
+        <Extension destinationClassName="com.sunny.service.ass.ApplyListService"/>
+        <Communication destinationClassName="com.sunny.dao.system.ApplyActivityMapper"/>
+    </Class>
+</ClassDiagram>

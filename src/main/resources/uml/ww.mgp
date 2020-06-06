@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageAnalysis>
+    <Package name="com.sunny.service.userdo" x="132" y="741">
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.service.system" x="568" y="52">
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.utils" x="58" y="453">
+        <DependencyLink destination="com.sunny.dao.system"/>
+        <DependencyLink destination="com.sunny.service.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+    <Package name="com.sunny.service.ass.impl" x="-9" y="193">
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+    <Package name="com.sunny.service.ass" x="305" y="83">
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.service.system.impl" x="357" y="506">
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.service.system"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.service.userdo.impl" x="28" y="626">
+        <DependencyLink destination="com.sunny.service.userdo"/>
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.model.system" x="996" y="609"/>
+    <Package name="com.sunny.dao.system" x="927" y="221">
+        <DependencyLink destination="com.sunny.model.system"/>
+    </Package>
+    <Package name="com.sunny.controller" x="910" y="39"/>
+    <Package name="com.sunny.controller.ass" x="926" y="106">
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+    <Package name="com.sunny.controller.system" x="26" y="22">
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.service.system"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+    <Package name="com.sunny.controller.userdo" x="1207" y="384">
+        <DependencyLink destination="com.sunny.service.userdo"/>
+        <DependencyLink destination="com.sunny.utils"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+    <Package name="com.sunny.controller.visitor" x="713" y="773">
+        <DependencyLink destination="com.sunny.service.userdo"/>
+        <DependencyLink destination="com.sunny.model.system"/>
+        <DependencyLink destination="com.sunny.service.ass"/>
+    </Package>
+</PackageAnalysis>
